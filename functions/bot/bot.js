@@ -70,7 +70,7 @@ bot.on("inline_query", async (ctx) => {
             id: voice.slice(0, 64),
             title: name,
             voice_file_id: voice,
-            is_personal: True,
+            is_personal: true,
         }));
 
     await ctx.answerInlineQuery(results);

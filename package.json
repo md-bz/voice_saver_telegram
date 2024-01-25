@@ -1,0 +1,17 @@
+{
+    "name": "voice-save-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "bot.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@supabase/supabase-js": "^2.39.3",
+        "netlify-lambda": "^2.0.16",
+        "telegraf": "^4.15.3"
+    }
+}

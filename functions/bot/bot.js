@@ -18,10 +18,10 @@ bot.command("help", async (ctx) => {
 
 bot.on("voice", async (ctx) => {
     const userId = ctx.from.id;
-    let response = await read(userId);
+    let { voices } = await read(userId);
     const voiceFileId = ctx.message.voice.file_id;
     let error;
-    if (response === null) {
+    if (voices === null) {
         error = await insert(userId, {}, voiceFileId);
     } else {
         error = await updateCurrentVoice(userId, voiceFileId);

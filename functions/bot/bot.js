@@ -71,7 +71,7 @@ bot.on("inline_query", async (ctx) => {
             title: name,
             voice_file_id: voice,
             cache_time: 0,
-            is_personal: true,
+            is_personal: True,
         }));
 
     await ctx.answerInlineQuery(results);

@@ -70,7 +70,6 @@ bot.on("inline_query", async (ctx) => {
             id: voice.slice(0, 64),
             title: name,
             voice_file_id: voice,
-            cache_time: 0,
             is_personal: True,
         }));
 

@@ -69,11 +69,9 @@ bot.on("inline_query", async (ctx) => {
             id: voice.slice(0, 64),
             title: name,
             voice_file_id: voice,
-            is_personal: true,
-            cache_time: 0,
         }));
 
-    await ctx.answerInlineQuery(results);
+    await ctx.answerInlineQuery(results, { is_personal: true, cache_time: 30 });
 });
 
 exports.handler = async (event) => {

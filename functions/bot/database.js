@@ -43,10 +43,18 @@ async function updateCurrentVoice(userId, currentVoice) {
         .select();
     return error;
 }
+async function deleteAll(userId) {
+    const { error } = await supabase
+        .from("voice_messages")
+        .delete()
+        .eq("userId", userId);
+    return error;
+}
 
 module.exports = {
     insert,
     updateCurrentVoice,
     read,
     update,
+    deleteAll,
 };

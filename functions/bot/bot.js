@@ -44,11 +44,13 @@ bot.command("delete", async (ctx) => {
         return;
     }
     if (voices[voiceName] === undefined) {
-        await ctx.reply("Voice not found");
+        await ctx.reply(
+            "Voice not found, Make sure you are spelling it correctly"
+        );
         return;
     }
     delete voices[voiceName];
-    let error = update(userId, voices, currentVoice);
+    let error = await update(userId, voices, currentVoice);
     if (error) {
         await ctx.reply("Error deleting voice");
     } else {

@@ -38,7 +38,7 @@ bot.command("delete", async (ctx) => {
         await ctx.reply("You have no saved voices");
         return;
     }
-    let voiceName = ctx.message.text.split(" ")[1];
+    let voiceName = ctx.message.text.split(" ").slice(1).join(" ");
     if (voiceName === undefined) {
         await ctx.reply("To delete a voice use /delete VoiceName");
         return;

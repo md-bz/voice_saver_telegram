@@ -39,6 +39,10 @@ bot.command("delete", async (ctx) => {
         return;
     }
     let voiceName = ctx.message.text.split(" ")[1].trim();
+    if (voiceName === undefined) {
+        await ctx.reply("To delete a voice use /delete VoiceName");
+        return;
+    }
     if (voices[voiceName] === undefined) {
         await ctx.reply("Voice not found");
         return;

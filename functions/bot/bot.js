@@ -22,7 +22,7 @@ bot.command("help", async (ctx) => {
         `Saving: Send a telegram voice than send a name for the voice to save it.
 Sending: Access the voice via inline. (write @VoiceSave_bot and search for your voices.)
 Deleting: Delete a single voice via sending /delete [voice name] where [voice name] is the name of the voice you want to delete.
-Delete All: Delete all your voices using /deleteAll command, warning: this action is irreversible!`
+Delete All: Delete all your voices using /delete_all command, warning: this action is irreversible!`
     );
 });
 
@@ -56,7 +56,7 @@ const stage = new Scenes.Stage([deleteScene], { ttl: 60 });
 bot.use(session());
 bot.use(stage.middleware());
 
-bot.command("deleteAll", async (ctx) => {
+bot.command("delete_all", async (ctx) => {
     ctx.scene.enter("deleteScene");
 });
 
